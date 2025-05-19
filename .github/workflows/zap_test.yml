@@ -53,8 +53,8 @@ jobs:
         run: |
           cd ./tests/
           python e2e_zap.py
-      - name: "Upload Report"
-        uses: actions/upload-artifact@v1
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 
         with:
-          name: zap-scan-report
           path: ./tests/zap-report.json
